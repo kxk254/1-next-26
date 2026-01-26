@@ -1,0 +1,39 @@
+.itemCard {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.itemImage {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-color: #f7f7f7; /* ここに現在の商品の写真を配置 */
+  margin-bottom: 30px;
+  transition: transform 0.6s ease;
+}
+.itemImage img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.itemCard:hover .itemImage {
+  transform: scale(0.98); /* 控えめなアニメーション */
+}
+
+.itemName {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 15px;
+}
+
+.itemPrice {
+  font-size: 0.8rem;
+  color: #888888;
+}
+
+.itemImage a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.4s;
+}

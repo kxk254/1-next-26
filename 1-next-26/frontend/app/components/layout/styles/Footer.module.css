@@ -1,0 +1,32 @@
+/* フッター：ミニマルなデザイン [9] */
+.footer {
+  padding: 100px 80px;
+  border-top: 1px solid #f2f2f2;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: #aaaaaa;
+  text-align: center;
+}
+
+.footerNav {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.4s;
+}
+
+.footerNav:hover {
+  opacity: 0.6;
+}
+
+.footerLinks {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}

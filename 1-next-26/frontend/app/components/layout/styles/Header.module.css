@@ -1,0 +1,168 @@
+
+
+
+/* 繊細な細い線による装飾 [1] */
+.header a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.4s;
+}
+.header a:hover { opacity: 0.6; }
+
+/* ヘッダー：文字を小さくし、写真の邪魔をしない設計 [2, 3] */
+.header {
+    padding: 50px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.logo {
+    font-size: 1.1rem;
+    letter-spacing: 0.5em; /* 広い字間による高級感 */
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+
+.desktopnav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+} 
+
+/* Hamburger bars */
+.hamburger {
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+  transition: 0.3s;
+  transform-origin: center;
+}
+
+/* Active animation */
+.isActive span:nth-child(1) {
+  transform:  translateY(11px) rotate(45deg);
+}
+.isActive span:nth-child(2) {
+  opacity: 0;
+}
+.isActive span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+/* Menu overlay */
+.navOverlay {
+  display: none; /* hide by default */
+  position: absolute;
+  top: 90px;
+  left: 0;
+  width: 100%;
+  background: white;
+  text-align: center;
+  transition: 0.3s;
+}
+.navOverlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+}
+.navOverlay li {
+    padding-bottom: 10px;
+    }
+
+.isOpen {
+  display: block; /* show menu when open */
+}
+
+
+@media (max-width: 768px) {
+            .header { padding: 30px; }
+	    .hamburger { display: flex }
+	    .desktopnav { display: none }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
