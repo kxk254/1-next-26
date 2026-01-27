@@ -78,4 +78,4 @@ class ServiceDescription(models.Model):
 
 
     def __str__(self):
-        return f"{self.type}: {self.content[:20]}"
+        return f"{self.type_choice}: {self.content[:20]}"
