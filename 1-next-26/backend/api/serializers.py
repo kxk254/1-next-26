@@ -11,12 +11,6 @@ class HomeSerializer(serializers.ModelSerializer):
         model = Home
         fields = '__all__'
 
-class AboutSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = About
-        fields = '__all__'
-
-
 class MessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Message
@@ -25,4 +19,12 @@ class MessageSerializer(serializers.ModelSerializer):
 class ServiceDescriptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = ServiceDescription
+        fields = '__all__'
+
+
+class AboutSerializer(serializers.ModelSerializer):
+    messages = MessageSerializer(many=True, read_only=True)
+    descriptions = ServiceDescriptionSerializer(many=True, read_only=True)
+    class Meta:
+        model = About
         fields = '__all__'
