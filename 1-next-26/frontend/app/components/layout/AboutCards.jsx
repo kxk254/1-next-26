@@ -27,6 +27,7 @@ export default async function AboutCard({ items }) {
                           <img
                             src={`${BACKEND_URL}${item.messages[0].icon}`}
                             alt="Instagram"
+                            width={24}
                           />
                         )}
                         {item.messages[0].content}
@@ -65,14 +66,14 @@ export default async function AboutCard({ items }) {
             )}
             <p>
               {item.descriptions.map((part, index) => {
-                if (part.type === "text")
+                if (part.type_choice === "text")
                   return (
                     <span key={index} className={styles.serviceDescription}>
                       {part.content}
                     </span>
                   );
 
-                if (part.type === "link")
+                if (part.type_choice === "link")
                   return (
                     <a
                       key={index}
@@ -80,7 +81,9 @@ export default async function AboutCard({ items }) {
                       target="_blank"
                       className={styles.serviceDescription}
                     >
-                      {part.icon && <img src={part.icon} width={18} />}
+                      {part.icon && (
+                        <img src={`${BACKEND_URL}${part.icon}`} width={18} />
+                      )}
                       {part.content}
                     </a>
                   );
