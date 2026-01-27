@@ -1,48 +1,12 @@
 export async function GET() {
-  const data = [
-    {
-      id: 1,
-      itemUrl: "https://mdfshop.base.shop/items/119245582",
-      imgSrc: "/0921-1.png",
-      description:
-        "クレッセント型のスタイリッシュなイヤリング。スワロスキーやバールのキラキラ感が華やかなデザインのイヤリングです。",
-      itemName: "ムーンシリーズイヤリング",
-      itemCategory: "イヤリング",
-      itemPrice: "¥4,400",
-    },
+  const res = await fetch(
+    `${process.env.BACKEND_BASE_URL}/getHome/?format=json`,
+    { cache: "no-store" },
+  );
 
-    {
-      id: 2,
-      itemUrl: "https://mdfshop.base.shop/items/119245582",
-      imgSrc: "/0921-1.png",
-      description:
-        "クレッセント型のスタイリッシュなイヤリング。スワロスキーやバールのキラキラ感が華やかなデザインのイヤリングです。",
-      itemName: "ムーンシリーズイヤリング",
-      itemCategory: "イヤリング",
-      itemPrice: "¥4,400",
-    },
+  if (!res.ok) {
+    return new Response("Failed to fetch backend data", { status: 500 });
+  }
 
-    {
-      id: 3,
-      itemUrl: "https://mdfshop.base.shop/items/119245582",
-      imgSrc: "/0921-1.png",
-      description:
-        "クレッセント型のスタイリッシュなイヤリング。スワロスキーやバールのキラキラ感が華やかなデザインのイヤリングです。",
-      itemName: "ムーンシリーズイヤリング",
-      itemCategory: "イヤリング",
-      itemPrice: "¥4,400",
-    },
-
-    {
-      id: 4,
-      itemUrl: "https://mdfshop.base.shop/items/119245582",
-      imgSrc: "/0921-1.png",
-      description:
-        "クレッセント型のスタイリッシュなイヤリング。スワロスキーやバールのキラキラ感が華やかなデザインのイヤリングです。",
-      itemName: "ムーンシリーズイヤリング",
-      itemCategory: "イヤリング",
-      itemPrice: "¥4,400",
-    },
-  ];
-  return Response.json(data);
+  return Response.json(await res.json());
 }
