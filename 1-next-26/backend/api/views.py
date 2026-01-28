@@ -1,6 +1,7 @@
 
+from rest_framework.permissions import IsAuthenticated 
 from rest_framework.response import Response 
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from bmflower.models import Item, Home, About, Message, ServiceDescription
 from .serializers import ItemSerializer, HomeSerializer, AboutSerializer, MessageSerializer, ServiceDescriptionSerializer
 
@@ -11,6 +12,7 @@ def getData(request):
     return Response(serializer.data)
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def addItem(request):
     serializer = ItemSerializer(data=request.data)
     if serializer.is_valid():
@@ -24,6 +26,7 @@ def getHomeData(request):
     return Response(serializer.data)
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def addHomeItem(request):
     serializer = HomeSerializer(data=request.data)
     if serializer.is_valid():
@@ -38,6 +41,7 @@ def getAboutData(request):
     return Response(serializer.data)
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def addAboutItem(request):
     serializer = AboutSerializer(data=request.data)
     if serializer.is_valid():
@@ -51,6 +55,7 @@ def getMessageData(request):
     return Response(serializer.data)
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def addMessageItem(request):
     serializer = MessageSerializer(data=request.data)
     if serializer.is_valid():
@@ -64,6 +69,7 @@ def getServiceDescriptionData(request):
     return Response(serializer.data)
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def addServiceDescriptionItem(request):
     serializer = ServiceDescriptionSerializer(data=request.data)
     if serializer.is_valid():

@@ -1,0 +1,37 @@
+
+services:
+  backend:
+    build: ./backend 
+    container_name: blm_django_backend
+    volumes:
+      - ./backend:/backend 
+      - ./db.sqlite3:/backend/db.sqlite3
+    env_file:
+      - ./backend/.env 
+    expose:
+      - "8000"
+    command: gunicorn core.wsgi:application --bind 0.0.0.0:8000 
+
+  frontend:
+    build: ./frontend 
+    container_name: blm_nextjs_frontend
+    volumes:
+      - ./frontend:/frontend 
+    expose:
+      - "3000"
+    env_file:
+      - ./frontend/.env
+    command: npm run start 
+
+  nginx:
+    build: ./nginx 
+    container_name: blm_nginx
+    ports: 
+      - "80:80"
+    volumes:
+      - ./backend/media:/backend/media 
+      - ./backend/static:/backend/static
+    depends_on:
+      - frontend 
+      - backend 
+
