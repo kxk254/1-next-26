@@ -42,7 +42,6 @@ export default async function AboutCard({ items }) {
                   <img
                     src={`${BACKEND_URL}${item.img_first}`}
                     alt="アクセサリー1"
-                    fill
                     style={{ objectFit: "cover" }}
                   />
                 </div>
@@ -50,7 +49,6 @@ export default async function AboutCard({ items }) {
                   <img
                     src={`${BACKEND_URL}${item.img_second}`}
                     alt="アクセサリー2"
-                    fill
                     style={{ objectFit: "cover" }}
                   />
                 </div>
@@ -58,7 +56,6 @@ export default async function AboutCard({ items }) {
                   <img
                     src={`${BACKEND_URL}${item.img_third}`}
                     alt="アクセサリー3"
-                    fill
                     style={{ objectFit: "cover" }}
                   />
                 </div>

@@ -59,3 +59,13 @@
   width: 100px;
   margin: 40px auto;
 }
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 20px;
+  }
+  .hero-inner h1 {
+    font-size: 1.2rem;
+  }
+}
