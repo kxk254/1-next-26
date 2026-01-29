@@ -1,7 +1,21 @@
 import styles from "@/app/components/layout/styles/Card.module.css";
 import Image from "next/image";
 
-export default function Card({ items, className }) {
+type Product = {
+  id: number;
+  item_url: string;
+  img_src?: string | null;
+  description: string;
+  item_name: string;
+  item_category: string;
+  item_price: number;
+};
+type CardProps = {
+  items: Product[];
+  className?: string;
+};
+
+export default function Card({ items, className }: CardProps) {
   const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
   return (
     <div className={className}>
@@ -24,7 +38,7 @@ export default function Card({ items, className }) {
               <br />
               {item.item_category}
             </div>
-            <div className={styles.item_price}>{item.itemPrice}</div>
+            <div className={styles.itemPrice}>{item.item_price}</div>
           </div>
         </div>
       ))}

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Blue Millefeuilleは、日常にそっときらめきを添えるハンドメイドアクセサリーショップ。",
   keywords:
     "ハンドメイド,イヤリング,アクセサリー,シャビーシック,バロックストーン,パール,ギフト,ナチュラル,Blue Millefeuille",
-  author: "Blue Millefeuille",
+  authors: { name: "Blue Millefeuille" },
 
   // Open Graph (OG) metadata for social media sharing
   openGraph: {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Blue Millefeuille | きらめくハンドメイドアクセサリー",
     description: "耳元に小さな幸せを。日常にそっと輝きを添えるイヤリング。",
-    image: "/0921-1.png",
+    images: "/0921-1.png",
   },
 };
 
