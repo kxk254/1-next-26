@@ -1,7 +1,34 @@
 import styles from "../layout/styles/AboutCards.module.css";
 import Image from "next/image";
 
-export default async function AboutCard({ items }) {
+type Message = {
+  content: string;
+  href?: string | null;
+  icon?: string | null;
+};
+
+type ServiceDescription = {
+  type_choice: "text" | "link";
+  content: string;
+  href?: string | null;
+  icon?: string | null;
+};
+
+type Product = {
+  id: number;
+  service_title: string;
+  img_first: string;
+  img_second: string;
+  img_third: string;
+  messages: Message[];
+  descriptions: ServiceDescription[];
+};
+
+type CardProps = {
+  items: Product[];
+};
+
+export default async function AboutCard({ items }: CardProps) {
   const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
   return (
     <div style={{ backgroundColor: "#fcfcfc" }}>
@@ -70,7 +97,7 @@ export default async function AboutCard({ items }) {
                     </span>
                   );
 
-                if (part.type_choice === "link")
+                if (part.type_choice === "link" && part.href)
                   return (
                     <a
                       key={index}

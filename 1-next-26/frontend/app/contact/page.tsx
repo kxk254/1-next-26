@@ -1,6 +1,6 @@
 import styles from "../components/layout/styles/Contact.module.css";
-import Header from "../components/layout/Header.tsx";
-import Footer from "../components/layout/Footer.tsx";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
 
 export default function Contact() {
   return (

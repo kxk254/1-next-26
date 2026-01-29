@@ -24,12 +24,12 @@ services:
     command: npm run start 
 
   nginx:
-    build: ./nginx 
+    image: nginx:alpine
     container_name: blm_nginx
     ports: 
       - "80:80"
     volumes:
-      - ./backend/static:/backend/static
+      - ./nginx/defautl.conf:/etc/nginx/default.conf:ro
     depends_on:
       - frontend 
       - backend 
