@@ -12,7 +12,7 @@ async function getProducts() {
   //    cache: "no-store",
   //  });
   //
-  const res = await fetch(`${process.env.BACKEND_BASE_URL}/api/about`, {
+  const res = await fetch(`${process.env.BACKEND_BASE_URL}/getAbout`, {
     cache: "no-store",
   });
   const products = await res.json();

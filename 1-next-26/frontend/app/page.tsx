@@ -13,7 +13,7 @@ async function getProducts() {
   //const res = await fetch(`${protocol}://${host}/api/home`, {
   //  cache: "no-store",
   //});
-  const res = await fetch(`${process.env.BACKEND_BASE_URL}/api/home`, {
+  const res = await fetch(`${process.env.BACKEND_BASE_URL}/getHome`, {
     cache: "no-store",
   });
   const products = await res.json();
