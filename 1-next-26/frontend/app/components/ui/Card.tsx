@@ -17,6 +17,12 @@ type CardProps = {
 
 export default function Card({ items, className }: CardProps) {
   const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
+  // 日本円にフォーマットする
+  const formatYen = (value: number) => {
+    return `¥${new Intl.NumberFormat("ja-JP").format(value)}-`;
+  };
+
   return (
     <div className={className}>
       {items.map((item) => (
@@ -38,7 +44,7 @@ export default function Card({ items, className }: CardProps) {
               <br />
               {item.item_category}
             </div>
-            <div className={styles.itemPrice}>{item.item_price}</div>
+            <div className={styles.itemPrice}>{formatYen(item.item_price)}</div>
           </div>
         </div>
       ))}
