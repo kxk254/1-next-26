@@ -11,12 +11,13 @@ export const metadata: Metadata = {
     "ハンドメイド,イヤリング,アクセサリー,シャビーシック,バロックストーン,パール,ギフト,ナチュラル,Blue Millefeuille",
   authors: { name: "Blue Millefeuille" },
 
+  metadataBase: new URL(process.env.BASE_URL || "https://blmf.jp"),
   // Open Graph (OG) metadata for social media sharing
   openGraph: {
     title: "Blue Millefeuille | きらめくハンドメイドアクセサリー",
     description:
       "耳元に小さな幸せを。ストーンフラワーシリーズのイヤリングで、あなたの“いつも”にさりげない特別を。",
-    url: "https://blmf.jp/",
+    url: "/",
     images: [
       {
         url: "/0921-1.png",
